@@ -16,6 +16,7 @@ class Animal {
 
 interface CheckTrait {
     boolean test(Animal a);
+//    String breakIt();
 }
 
 interface Updater {
@@ -26,7 +27,12 @@ class CheckIfHopper implements CheckTrait {
     public boolean test(Animal animal) {
         return animal.canHop();
     }
+
+    public String breakIt(){
+        return null;
+    }
 }
+
 
 public class Lambdas1 {
 
@@ -38,6 +44,10 @@ public class Lambdas1 {
         print(animals, a -> a.canHop());
         printUpdatedSpecies( animals, (Animal animal) ->  animal.toString().equals("fish") ? animal.toString() + "FISHfish" :  animal.toString()  );
         Animal animal = new Animal("animal", false, true);
+        System.out.println("wantWhetherCanHop");
+        boolean wantWhetherCanHop = true;
+        print(animals, a -> a.canHop() == wantWhetherCanHop);
+
     }
 
     private static List<Animal> createAnimals(){
