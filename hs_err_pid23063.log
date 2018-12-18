@@ -1,0 +1,380 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Cannot create GC thread. Out of system resources.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (gcTaskThread.cpp:48), pid=23063, tid=0x00007f82cabcb700
+#
+# JRE version:  (8.0_172-b01) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.172-b01 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f82c400c000):  JavaThread "Unknown thread" [_thread_in_vm, id=23065, stack(0x00007f82caacb000,0x00007f82cabcc000)]
+
+Stack: [0x00007f82caacb000,0x00007f82cabcc000],  sp=0x00007f82cabca650,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa3e58e]  VMError::report_and_die()+0x14e
+V  [libjvm.so+0x4dde69]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x99
+V  [libjvm.so+0x5ab487]  GCTaskThread::GCTaskThread(GCTaskManager*, unsigned int, unsigned int)+0x157
+V  [libjvm.so+0x5aa3dd]  GCTaskManager::initialize()+0x3ad
+V  [libjvm.so+0x8cc01b]  ParallelScavengeHeap::initialize()+0x35b
+V  [libjvm.so+0xa09171]  Universe::initialize_heap()+0x101
+V  [libjvm.so+0xa0a223]  universe_init()+0x33
+V  [libjvm.so+0x60a465]  init_globals()+0x55
+V  [libjvm.so+0x9eeaf7]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x207
+V  [libjvm.so+0x66f9f4]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x75f7]  JavaMain+0x87
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007f82c400c000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=23065, stack(0x00007f82caacb000,0x00007f82cabcc000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:02 11934348                           /home/kinya/.sdkman/candidates/java/8.0.172-zulu/bin/java
+00600000-00601000 rw-p 00000000 08:02 11934348                           /home/kinya/.sdkman/candidates/java/8.0.172-zulu/bin/java
+0149e000-014bf000 rw-p 00000000 00:00 0                                  [heap]
+85800000-8ab00000 rw-p 00000000 00:00 0 
+8ab00000-d7300000 ---p 00000000 00:00 0 
+d7300000-d9c00000 rw-p 00000000 00:00 0 
+d9c00000-100000000 ---p 00000000 00:00 0 
+7f82b3b15000-7f82b3ca1000 rw-p 00000000 00:00 0 
+7f82b3ca1000-7f82b3ca2000 ---p 00000000 00:00 0 
+7f82b3ca2000-7f82b3da2000 rw-p 00000000 00:00 0 
+7f82b3da2000-7f82b3da3000 ---p 00000000 00:00 0 
+7f82b3da3000-7f82b3ea3000 rw-p 00000000 00:00 0 
+7f82b3ea3000-7f82b3ea4000 ---p 00000000 00:00 0 
+7f82b3ea4000-7f82b3fce000 rw-p 00000000 00:00 0 
+7f82b3fce000-7f82b4232000 ---p 00000000 00:00 0 
+7f82b4232000-7f82b425c000 rw-p 00000000 00:00 0 
+7f82b425c000-7f82b44bf000 ---p 00000000 00:00 0 
+7f82b44bf000-7f82b44d4000 rw-p 00000000 00:00 0 
+7f82b44d4000-7f82b4606000 ---p 00000000 00:00 0 
+7f82b4606000-7f82b4611000 rw-p 00000000 00:00 0 
+7f82b4611000-7f82b49c7000 ---p 00000000 00:00 0 
+7f82b49c7000-7f82b4c37000 rwxp 00000000 00:00 0 
+7f82b4c37000-7f82c39c7000 ---p 00000000 00:00 0 
+7f82c39c7000-7f82c39e2000 r-xp 00000000 08:02 11933812                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libzip.so
+7f82c39e2000-7f82c3be1000 ---p 0001b000 08:02 11933812                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libzip.so
+7f82c3be1000-7f82c3be2000 rw-p 0001a000 08:02 11933812                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libzip.so
+7f82c3be2000-7f82c3bed000 r-xp 00000000 08:02 6820405                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f82c3bed000-7f82c3dec000 ---p 0000b000 08:02 6820405                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f82c3dec000-7f82c3ded000 r--p 0000a000 08:02 6820405                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f82c3ded000-7f82c3dee000 rw-p 0000b000 08:02 6820405                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f82c3dee000-7f82c3df4000 rw-p 00000000 00:00 0 
+7f82c3df4000-7f82c3dff000 r-xp 00000000 08:02 6820415                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f82c3dff000-7f82c3ffe000 ---p 0000b000 08:02 6820415                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f82c3ffe000-7f82c3fff000 r--p 0000a000 08:02 6820415                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f82c3fff000-7f82c4000000 rw-p 0000b000 08:02 6820415                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f82c4000000-7f82c403f000 rw-p 00000000 00:00 0 
+7f82c403f000-7f82c8000000 ---p 00000000 00:00 0 
+7f82c8004000-7f82c80f3000 rw-p 00000000 00:00 0 
+7f82c80f3000-7f82c8109000 r-xp 00000000 08:02 6820399                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f82c8109000-7f82c8308000 ---p 00016000 08:02 6820399                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f82c8308000-7f82c8309000 r--p 00015000 08:02 6820399                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f82c8309000-7f82c830a000 rw-p 00016000 08:02 6820399                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f82c830a000-7f82c830c000 rw-p 00000000 00:00 0 
+7f82c830c000-7f82c8314000 r-xp 00000000 08:02 6820401                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f82c8314000-7f82c8513000 ---p 00008000 08:02 6820401                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f82c8513000-7f82c8514000 r--p 00007000 08:02 6820401                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f82c8514000-7f82c8515000 rw-p 00008000 08:02 6820401                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f82c8515000-7f82c851f000 r-xp 00000000 08:02 11933800                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libinstrument.so
+7f82c851f000-7f82c871e000 ---p 0000a000 08:02 11933800                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libinstrument.so
+7f82c871e000-7f82c871f000 rw-p 00009000 08:02 11933800                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libinstrument.so
+7f82c871f000-7f82c8749000 r-xp 00000000 08:02 11933835                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libjava.so
+7f82c8749000-7f82c8949000 ---p 0002a000 08:02 11933835                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libjava.so
+7f82c8949000-7f82c894b000 rw-p 0002a000 08:02 11933835                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libjava.so
+7f82c894b000-7f82c8958000 r-xp 00000000 08:02 11933807                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libverify.so
+7f82c8958000-7f82c8b58000 ---p 0000d000 08:02 11933807                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libverify.so
+7f82c8b58000-7f82c8b5a000 rw-p 0000d000 08:02 11933807                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/libverify.so
+7f82c8b5a000-7f82c8b61000 r-xp 00000000 08:02 6820460                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f82c8b61000-7f82c8d60000 ---p 00007000 08:02 6820460                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f82c8d60000-7f82c8d61000 r--p 00006000 08:02 6820460                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f82c8d61000-7f82c8d62000 rw-p 00007000 08:02 6820460                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f82c8d62000-7f82c8e6a000 r-xp 00000000 08:02 6820376                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f82c8e6a000-7f82c9069000 ---p 00108000 08:02 6820376                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f82c9069000-7f82c906a000 r--p 00107000 08:02 6820376                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f82c906a000-7f82c906b000 rw-p 00108000 08:02 6820376                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f82c906b000-7f82c9cb6000 r-xp 00000000 08:02 11933821                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/server/libjvm.so
+7f82c9cb6000-7f82c9eb5000 ---p 00c4b000 08:02 11933821                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/server/libjvm.so
+7f82c9eb5000-7f82c9f85000 rw-p 00c4a000 08:02 11933821                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/jre/lib/amd64/server/libjvm.so
+7f82c9f85000-7f82c9fc7000 rw-p 00000000 00:00 0 
+7f82c9fc7000-7f82ca187000 r-xp 00000000 08:02 6820306                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f82ca187000-7f82ca387000 ---p 001c0000 08:02 6820306                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f82ca387000-7f82ca38b000 r--p 001c0000 08:02 6820306                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f82ca38b000-7f82ca38d000 rw-p 001c4000 08:02 6820306                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f82ca38d000-7f82ca391000 rw-p 00000000 00:00 0 
+7f82ca391000-7f82ca394000 r-xp 00000000 08:02 6820330                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f82ca394000-7f82ca593000 ---p 00003000 08:02 6820330                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f82ca593000-7f82ca594000 r--p 00002000 08:02 6820330                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f82ca594000-7f82ca595000 rw-p 00003000 08:02 6820330                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f82ca595000-7f82ca5aa000 r-xp 00000000 08:02 11933867                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/lib/amd64/jli/libjli.so
+7f82ca5aa000-7f82ca7aa000 ---p 00015000 08:02 11933867                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/lib/amd64/jli/libjli.so
+7f82ca7aa000-7f82ca7ab000 rw-p 00015000 08:02 11933867                   /home/kinya/.sdkman/candidates/java/8.0.172-zulu/lib/amd64/jli/libjli.so
+7f82ca7ab000-7f82ca7c3000 r-xp 00000000 08:02 6820452                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f82ca7c3000-7f82ca9c2000 ---p 00018000 08:02 6820452                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f82ca9c2000-7f82ca9c3000 r--p 00017000 08:02 6820452                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f82ca9c3000-7f82ca9c4000 rw-p 00018000 08:02 6820452                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f82ca9c4000-7f82ca9c8000 rw-p 00000000 00:00 0 
+7f82ca9c8000-7f82ca9ee000 r-xp 00000000 08:02 6820278                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f82caacb000-7f82caace000 ---p 00000000 00:00 0 
+7f82caace000-7f82cabd1000 rw-p 00000000 00:00 0 
+7f82cabe3000-7f82cabeb000 rw-s 00000000 08:02 13239245                   /tmp/hsperfdata_kinya/23063
+7f82cabeb000-7f82cabec000 rw-p 00000000 00:00 0 
+7f82cabec000-7f82cabed000 r--p 00000000 00:00 0 
+7f82cabed000-7f82cabee000 r--p 00025000 08:02 6820278                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f82cabee000-7f82cabef000 rw-p 00026000 08:02 6820278                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f82cabef000-7f82cabf0000 rw-p 00000000 00:00 0 
+7ffde18b0000-7ffde18d1000 rw-p 00000000 00:00 0                          [stack]
+7ffde18e7000-7ffde18ea000 r--p 00000000 00:00 0                          [vvar]
+7ffde18ea000-7ffde18ec000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -javaagent:/home/kinya/dev/tools/idea-IC-173.4674.33/lib/idea_rt.jar=39869:/home/kinya/dev/tools/idea-IC-173.4674.33/bin -Dfile.encoding=UTF-8 
+java_command: kt.ExecutorServiceExample
+java_class_path (initial): /home/kinya/.sdkman/candidates/java/current/jre/lib/charsets.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/cldrdata.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/dnsns.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/jaccess.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/localedata.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/nashorn.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/sunec.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/sunjce_provider.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/sunpkcs11.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/ext/zipfs.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/jce.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/jsse.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/management-agent.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/resources.jar:/home/kinya/.sdkman/candidates/java/current/jre/lib/rt.jar:/home/kinya/dev/projects/JavaAssociatePractice/out/production/JavaAssociatePractice:/home/kinya/dev/tools/idea-IC-173.4674.33/lib/idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/kinya/bin:/home/kinya/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa3ef70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa3ef70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8a8ec0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8a8ec0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8a8ec0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8a8ec0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8aa5c0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.4 LTS"
+
+uname:Linux 4.15.0-36-generic #39~16.04.1-Ubuntu SMP Tue Sep 25 08:59:23 UTC 2018 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 30361, NOFILE 1048576, AS infinity
+load average:1.03 1.04 0.71
+
+/proc/meminfo:
+MemTotal:        8022072 kB
+MemFree:          221964 kB
+MemAvailable:    1882020 kB
+Buffers:          126224 kB
+Cached:          1456900 kB
+SwapCached:            8 kB
+Active:          5253508 kB
+Inactive:        1904128 kB
+Active(anon):    4685916 kB
+Inactive(anon):   627072 kB
+Active(file):     567592 kB
+Inactive(file):  1277056 kB
+Unevictable:         200 kB
+Mlocked:             200 kB
+SwapTotal:       8242172 kB
+SwapFree:        8241916 kB
+Dirty:              6044 kB
+Writeback:             0 kB
+AnonPages:       5574720 kB
+Mapped:           626520 kB
+Shmem:            583456 kB
+Slab:             249520 kB
+SReclaimable:      73380 kB
+SUnreclaim:       176140 kB
+KernelStack:      200548 kB
+PageTables:        97656 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12253208 kB
+Committed_AS:   26715708 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      264532 kB
+DirectMap2M:     7979008 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz
+stepping	: 9
+microcode	: 0x20
+cpu MHz		: 2993.295
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 5188.37
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz
+stepping	: 9
+microcode	: 0x20
+cpu MHz		: 2993.294
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 5188.37
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz
+stepping	: 9
+microcode	: 0x20
+cpu MHz		: 2993.298
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 5188.37
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz
+stepping	: 9
+microcode	: 0x20
+cpu MHz		: 2993.293
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 5188.37
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8022072k(221468k free), swap 8242172k(8241916k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.172-b01) for linux-amd64 JRE (1.8.0_172-b01), built on Apr 18 2018 12:57:33 by "zulu_re" with gcc 4.4.7 20120313 (Red Hat 4.4.7-3)
+
+time: Wed Oct 24 22:36:05 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
